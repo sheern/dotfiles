@@ -28,6 +28,9 @@ CASE_SENSITIVE="true"
 # much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# How long should zsh wait for additional characters in a sequence
+KEYTIMEOUT=1
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -35,8 +38,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    pass
     zsh-autosuggestions
-    history-substring-search
     zsh-syntax-highlighting
 )
 
@@ -75,4 +78,5 @@ bindkey -v
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# fzf shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
