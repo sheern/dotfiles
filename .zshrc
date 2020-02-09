@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Dotfiles shortcut
+export DOTFILES=$HOME/dotfiles
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 # Use dotfiles custom dir
@@ -39,7 +41,7 @@ KEYTIMEOUT=1
 plugins=(
     git
     pass
-    zsh-autosuggestions
+    # zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
