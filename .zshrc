@@ -10,7 +10,7 @@ export ZSH_CUSTOM=$HOME/dotfiles/zsh_custom
 
 # Theme and colors
 ZSH_THEME="oxide"
-eval $(dircolors -b $DOTFILES/.dircolors)
+type dircolors &>/dev/null && eval $(dircolors -b $DOTFILES/.dircolors)
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"

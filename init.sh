@@ -3,6 +3,7 @@ dotfiles=`realpath ~/dotfiles`
 
 # Clone the plugins
 cd $dotfiles
+echo "Updating submodules for zsh plugins"
 git submodule update --init
 
 # Install oh-my-zsh
@@ -15,6 +16,7 @@ fi
 configs=('.zshrc' '.vimrc' '.tmux.conf')
 # Create/update symlinks
 for config in ${configs[@]}; do
+    echo "Linking $config"
     ln -fs $dotfiles/$config ~/$config
 done
 
