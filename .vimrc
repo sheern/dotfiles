@@ -4,7 +4,15 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
+" VUNDLE
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
 " TODO: Load plugins here (pathogen or vundle)
+Plugin 'christoomey/vim-tmux-navigator'
+
+call vundle#end()
+" END VUNDLE
 
 " Turn on syntax highlighting
 syntax on
@@ -35,11 +43,10 @@ set encoding=utf-8
 set wrap
 set textwidth=79
 set formatoptions=tcqrn1
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
 set expandtab
-set noshiftround
 
 " Cursor motion
 set scrolloff=3
