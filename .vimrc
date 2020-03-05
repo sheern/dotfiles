@@ -1,6 +1,10 @@
 " Don't try to be vi compatible
 set nocompatible
 
+" Seamless integration with system clipboard
+" Requires +clipboard support in the `vim --version`
+set clipboard=unnamed
+
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
