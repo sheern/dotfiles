@@ -14,6 +14,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " TODO: Load plugins here (pathogen or vundle)
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 " END VUNDLE
@@ -25,10 +27,7 @@ syntax on
 filetype plugin indent on
 
 " TODO: Pick a leader key
-" let mapleader = ","
-
-" Security
-set modelines=0
+let mapleader = ","
 
 " Show line numbers
 set number
@@ -58,6 +57,8 @@ set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
 
+set ttimeoutlen=1
+
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
@@ -85,15 +86,7 @@ set smartcase
 set showmatch
 map <leader><space> :let @/=''<cr> " clear search
 
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
-
 " Textmate holdouts
-
-" Formatting
-map <leader>q gqip
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
@@ -110,3 +103,8 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_close_button = 0
+

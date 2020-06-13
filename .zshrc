@@ -10,10 +10,10 @@ export ZSH_CUSTOM=$HOME/dotfiles/zsh_custom
 
 # Theme and colors
 ZSH_THEME="common"
-(type dircolors &>/dev/null && eval $(dircolors -b $DOTFILES/.dircolors)) || echo "dircolors command not available to set fancy directory colors in ls"
+type dircolors &>/dev/null && eval $(dircolors -b $DOTFILES/.dircolors)
 
 # Uncomment the following line to use case-sensitive completion.
-CASE_SENSITIVE="true"
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -41,25 +41,11 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# chdir hook
+# chdir hook to list directory
 function chpwd() {
     emulate -L zsh
     ls -a
 }
-
-# START this speeds up pasting w/ autosuggest
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
-
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
-# END speeds up pasting
 
 # Command-line editing in vim mode
 bindkey -v
