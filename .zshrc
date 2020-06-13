@@ -9,8 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/dotfiles/zsh_custom
 
 # Theme and colors
-ZSH_THEME="oxide"
-type dircolors &>/dev/null && eval $(dircolors -b $DOTFILES/.dircolors)
+ZSH_THEME="common"
+(type dircolors &>/dev/null && eval $(dircolors -b $DOTFILES/.dircolors)) || echo "dircolors command not available to set fancy directory colors in ls"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -31,7 +31,6 @@ KEYTIMEOUT=1
 plugins=(
     git
     pass
-    # zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
@@ -62,8 +61,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 # END speeds up pasting
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
 # Command-line editing in vim mode
 bindkey -v
 # Visual mode opens vim buffer
@@ -72,3 +69,4 @@ bindkey -M vicmd v edit-command-line
 
 # fzf shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
