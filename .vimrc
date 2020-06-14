@@ -13,12 +13,19 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " TODO: Load plugins here (pathogen or vundle)
+Plugin 'sheerun/vim-polyglot'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'preservim/nerdtree'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 " END VUNDLE
+
+" Finding files
+map <C-e> :NERDTreeToggle<CR>
+map <C-f> :FZF<CR>
 
 " Turn on syntax highlighting
 syntax on
@@ -35,9 +42,6 @@ highlight LineNr ctermfg=DarkGrey
 
 " Show file stats
 set ruler
-
-" Blink cursor on error instead of beeping (grr)
-set visualbell
 
 " Encoding
 set encoding=utf-8
