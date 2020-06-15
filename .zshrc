@@ -53,6 +53,8 @@ bindkey -v
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # fzf shell integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

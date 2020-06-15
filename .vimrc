@@ -86,8 +86,7 @@ vnoremap / /\v
 set hlsearch
 set incsearch
 set ignorecase
-set smartcase
-set showmatch
+set smartcase " ignore case unless search includes UPPER CASE
 map <leader><space> :let @/=''<cr> " clear search
 
 " Textmate holdouts
