@@ -23,6 +23,9 @@ Plugin 'junegunn/fzf'
 call vundle#end()
 " END VUNDLE
 
+" Event hooks (e.g. trailing whitespace removal)
+autocmd BufWritePre * %s/\s\+$//e
+
 " Finding files
 map <C-e> :NERDTreeToggle<CR>
 map <C-f> :FZF<CR>
@@ -50,9 +53,9 @@ set encoding=utf-8
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set tabstop=4
+" set tabstop=8
 set shiftwidth=4
-set softtabstop=0
+set softtabstop=4
 set expandtab
 
 " Cursor motion
@@ -66,9 +69,6 @@ set ttimeoutlen=1
 " Move up/down editor lines
 nnoremap j gj
 nnoremap k gk
-
-" Allow hidden buffers
-set hidden
 
 " Rendering
 set ttyfast
