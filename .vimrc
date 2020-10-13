@@ -84,6 +84,7 @@ set showcmd
 nnoremap / /\v
 vnoremap / /\v
 set hlsearch
+hi Search ctermfg=white ctermbg=red
 set incsearch
 set ignorecase
 set smartcase " ignore case unless search includes UPPER CASE

@@ -41,12 +41,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# chdir hook to list directory
-function chpwd() {
-    emulate -L zsh
-    ls -a
-}
-
 # Command-line editing in vim mode
 bindkey -v
 # Visual mode opens vim buffer
