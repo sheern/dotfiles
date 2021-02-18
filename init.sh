@@ -6,8 +6,11 @@ cd $dotfiles
 echo "Updating submodules for zsh plugins"
 git submodule update --init
 
+# Install important packages
+cat $dotfiles/packages_to_install.txt | xargs sudo apt install
+
 # Install oh-my-zsh
-if [ -z $ZSH ]; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
     echo "Already have oh-my-zsh, skipping install"
