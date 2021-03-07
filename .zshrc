@@ -30,7 +30,6 @@ KEYTIMEOUT=1
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    pass
     zsh-syntax-highlighting
 )
 
