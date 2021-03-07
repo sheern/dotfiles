@@ -40,6 +40,11 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
+# List directory contents when navigating
+chpwd() {
+    la
+}
+
 # Command-line editing in vim mode
 bindkey -v
 # Visual mode opens vim buffer
