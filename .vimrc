@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/fzf'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 " END VUNDLE
@@ -42,6 +43,11 @@ let mapleader = ","
 " Show line numbers
 set number
 highlight LineNr ctermfg=DarkGrey
+" git-gutter colors
+highlight! link SignColumn LineNr
+highlight GitGutterAdd    ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
 
 " Show file stats
 set ruler
@@ -84,7 +90,7 @@ set showcmd
 nnoremap / /\v
 vnoremap / /\v
 set hlsearch
-hi Search ctermfg=white ctermbg=red
+hi Search ctermfg=white ctermbg=92
 set incsearch
 set ignorecase
 set smartcase " ignore case unless search includes UPPER CASE
