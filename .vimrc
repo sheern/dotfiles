@@ -56,10 +56,12 @@ set ruler
 set encoding=utf-8
 
 " Whitespace
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-" set tabstop=8
+" Handled by vim-polyglot for most filetypes but keep around for files like
+" .vimrc
+set nowrap
+" r and o, insert comment leader character(s) on next line
+set formatoptions=ro
+set tabstop=8
 set shiftwidth=4
 set softtabstop=4
 set expandtab
