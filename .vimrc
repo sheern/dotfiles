@@ -20,8 +20,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
+" For plugins to load correctly
+filetype plugin indent on
 " END VUNDLE
 
 " Event hooks (e.g. trailing whitespace removal)
@@ -34,10 +38,7 @@ map <C-f> :FZF<CR>
 " Turn on syntax highlighting
 syntax on
 
-" For plugins to load correctly
-filetype plugin indent on
-
-" TODO: Pick a leader key
+" COMMA LEADER
 let mapleader = ","
 
 " Show line numbers
@@ -48,6 +49,8 @@ highlight! link SignColumn LineNr
 highlight GitGutterAdd    ctermfg=2
 highlight GitGutterChange ctermfg=3
 highlight GitGutterDelete ctermfg=1
+" vsplit same color as background
+highlight VertSplit cterm=NONE
 
 " Show file stats
 set ruler
@@ -58,7 +61,7 @@ set encoding=utf-8
 " Whitespace
 " Handled by vim-polyglot for most filetypes but keep around for files like
 " .vimrc
-set nowrap
+set wrap
 " r and o, insert comment leader character(s) on next line
 set formatoptions=ro
 set tabstop=8
@@ -92,7 +95,8 @@ set showcmd
 nnoremap / /\v
 vnoremap / /\v
 set hlsearch
-hi Search ctermfg=white ctermbg=92
+highlight Search ctermfg=white ctermbg=92
+highlight MatchParen ctermfg=black
 set incsearch
 set ignorecase
 set smartcase " ignore case unless search includes UPPER CASE
@@ -106,6 +110,13 @@ set listchars=tab:▸\ ,eol:¬
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
+
+" Ctrl-c to close current buffer and change current window to previous buffer
+nnoremap <C-c> :bp\|bd #<CR>
+
+" Quickly edit and source .vimrc
+nnoremap <leader>ve :spl $MYVIMRC<CR>
+nnoremap <leader>vr :source $MYVIMRC<CR>
 
 " Color scheme (terminal)
 set t_Co=256
