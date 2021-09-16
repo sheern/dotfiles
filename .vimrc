@@ -13,6 +13,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " TODO: Load plugins here (pathogen or vundle)
+" Requires node in $PATH (check with 'which node')
+Plugin 'neoclide/coc.nvim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-airline/vim-airline'
@@ -129,3 +131,15 @@ let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_close_button = 0
 
+
+
+
+" =======================================================================
+" =================== CONQUERER OF COMPLETION ===========================
+" =======================================================================
+
+
+
+" =======================================================================
+" =======================================================================
+" =======================================================================
