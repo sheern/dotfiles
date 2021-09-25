@@ -21,7 +21,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/fzf'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 
@@ -91,11 +91,13 @@ set laststatus=2
 set showmode
 set showcmd
 
+set pastetoggle=<leader>p
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
 set hlsearch
-highlight Search ctermfg=white ctermbg=92
+highlight Search ctermfg=white ctermbg=53
 highlight MatchParen ctermfg=black
 set incsearch
 set ignorecase
@@ -111,8 +113,13 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
+" BUFFER SWITCHING
 " Ctrl-c to close current buffer and change current window to previous buffer
 nnoremap <C-c> :bp\|bd #<CR>
+" Open fzf for all files in cwd
+nnoremap <leader>f :Files<CR>
+" Open fzf for listed buffers
+nnoremap <leader>b :Buffers<CR>
 
 " Quickly edit and source .vimrc
 nnoremap <leader>ve :spl $MYVIMRC<CR>
@@ -127,19 +134,44 @@ let g:solarized_termtrans=1
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
 
+" Display all highlight colorings in a split
+nnoremap <leader>h :so $VIMRUNTIME/syntax/hitest.vim<CR>
+
 let g:airline_theme='bubblegum'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
 
+" ===================================================
+" =================== FZF ===========================
+" ===================================================
+function! s:list_buffers()
+    redir => list
+    silent ls
+    redir END
+    return split(list, "\n")
+endfunction
 
+function! s:delete_buffers(lines)
+    execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
 
+" :BD to delete highlighted buffers
+" shift-tab to multi-select
+command! BD call fzf#run(fzf#wrap({
+            \ 'source': s:list_buffers(),
+            \ 'sink*': { lines -> s:delete_buffers(lines) },
+            \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+            \ }))
+" ===================================================
+" ===================================================
+" ===================================================
 
 " =======================================================================
 " =================== CONQUERER OF COMPLETION ===========================
 " =======================================================================
-
-
-
+" Fix the horrendous pink background color
+hi CocFloating ctermbg=233
+hi FgCocErrorFloatBgCocFloating ctermbg=233
+hi FgCocInfoFloatBgCocFloating ctermbg=233
+hi FgCocWarningFloatBgCocFloating ctermbg=233
 " =======================================================================
 " =======================================================================
 " =======================================================================
