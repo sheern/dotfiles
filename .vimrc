@@ -35,7 +35,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Finding files
 map <C-e> :NERDTreeToggle<CR>
-map <C-f> :FZF<CR>
 
 " Turn on syntax highlighting
 syntax on
@@ -80,6 +79,10 @@ runtime! macros/matchit.vim
 " Move up/down editor display lines (effective when line wraps)
 nnoremap j gj
 nnoremap k gk
+" Insert a new line below, stay in normal mode
+nnoremap <Enter> o<Esc>
+" Break the line at cursor, stay in normal mode
+nnoremap <leader><Enter> i<CR><Esc>
 
 " Rendering
 set ttyfast
@@ -121,6 +124,10 @@ nnoremap <C-c> :bp\|bd #<CR>
 nnoremap <leader>f :Files<CR>
 " Open fzf for listed buffers
 nnoremap <leader>b :Buffers<CR>
+
+" SPLITS
+" Resize equally within each split
+nnoremap <leader>= <C-w>=<CR>
 
 " Quickly edit and source .vimrc
 nnoremap <leader>ve :spl $MYVIMRC<CR>
@@ -173,6 +180,9 @@ hi CocFloating ctermbg=233
 hi FgCocErrorFloatBgCocFloating ctermbg=233
 hi FgCocInfoFloatBgCocFloating ctermbg=233
 hi FgCocWarningFloatBgCocFloating ctermbg=233
+
+nnoremap <C-n> :call CocAction('diagnosticNext')<CR>
+nnoremap <C-p> :call CocAction('diagnosticPrevious')<CR>
 " =======================================================================
 " =======================================================================
 " =======================================================================
