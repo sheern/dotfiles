@@ -76,6 +76,12 @@ set backspace=indent,eol,start
 set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
 
+" Create a temporary session (useful for refreshing vim
+" when sourcing .vimrc is insufficient
+nnoremap <leader>ss :mksession! ~/.tmpsession.vim<CR>
+" Load the temporary session
+nnoremap <leader>sl :source ~/.tmpsession.vim<CR>
+
 " Move up/down editor display lines (effective when line wraps)
 nnoremap j gj
 nnoremap k gk
@@ -107,8 +113,6 @@ set incsearch
 set ignorecase
 set smartcase " ignore case unless search includes UPPER CASE
 map <leader><space> :let @/=''<cr> " clear search
-
-" Textmate holdouts
 
 " Visualize tabs and newlines
 set listchars=tab:▸\ ,eol:¬
