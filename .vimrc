@@ -24,6 +24,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 " For plugins to load correctly
