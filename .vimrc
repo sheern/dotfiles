@@ -17,8 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'neoclide/coc.nvim'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -88,7 +87,8 @@ set ttyfast
 set laststatus=2
 
 " Last line
-set showmode
+" Status line will show mode, don't need to show on last line
+set noshowmode
 set showcmd
 
 set pastetoggle=<leader>p
@@ -125,6 +125,8 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>ve :spl $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 
+" COLORS
+let g:lightline = { 'colorscheme': 'darcula' }
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
@@ -136,8 +138,6 @@ let g:solarized_termtrans=1
 
 " Display all highlight colorings in a split
 nnoremap <leader>h :so $VIMRUNTIME/syntax/hitest.vim<CR>
-
-let g:airline_theme='bubblegum'
 
 " ===================================================
 " =================== FZF ===========================
