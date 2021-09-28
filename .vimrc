@@ -85,9 +85,9 @@ nnoremap <leader>sl :source ~/.tmpsession.vim<CR>
 nnoremap j gj
 nnoremap k gk
 " Insert a new line below, stay in normal mode
-" Don't use this mapping in the command history or quickfix window
 nnoremap <Enter> o<Esc>
-autocmd CmdwinEnter * nnoremap <CR> <CR>
+" Don't use this mapping in the command history or quickfix window
+autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 " Break the line at cursor, stay in normal mode
 nnoremap <leader><Enter> i<CR><Esc>
@@ -126,6 +126,8 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " BUFFER SWITCHING
 " Ctrl-c to close current buffer and change current window to previous buffer
 nnoremap <C-c> :bp\|bd #<CR>
+" Don't use this mapping in command window (<C-c> closes command window)
+autocmd CmdwinEnter * nnoremap <buffer> <C-c> <C-c>
 " Open fzf for all files in cwd
 nnoremap <leader>f :Files<CR>
 " Open fzf for listed buffers
