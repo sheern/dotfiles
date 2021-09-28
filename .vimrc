@@ -40,6 +40,11 @@ autocmd BufWritePre * %s/\s\+$//e
 " Finding files
 map <C-e> :NERDTreeToggle<CR>
 
+" Tab pages
+nnoremap <C-t> :tabnew<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
 " Open fugitive split
 nnoremap <leader>g :Git<CR>
 
@@ -138,8 +143,11 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>= <C-w>=<CR>
 
 " Quickly edit and source .vimrc
-nnoremap <leader>ve :spl $MYVIMRC<CR>
+nnoremap <leader>ve :tabnew $MYVIMRC<CR>
+" This mapping is useful if you edited .vimrc in another vim instance
+" But the autocmd will handle the usual case of editing .vimrc in the same instance using <leader>ve
 nnoremap <leader>vr :source $MYVIMRC<CR>
+autocmd BufWritePost .vimrc normal ,vr
 
 " COLORS
 let g:lightline = { 'colorscheme': 'darcula' }
