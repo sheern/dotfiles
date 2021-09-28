@@ -1,6 +1,9 @@
 " Don't try to be vi compatible
 set nocompatible
 
+" COMMA LEADER
+let mapleader = ","
+
 " Seamless integration with system clipboard
 " Requires +clipboard support in the `vim --version`
 set clipboard=unnamed
@@ -37,20 +40,15 @@ autocmd BufWritePre * %s/\s\+$//e
 " Finding files
 map <C-e> :NERDTreeToggle<CR>
 
+" Open fugitive split
+nnoremap <leader>g :Git<CR>
+
 " Turn on syntax highlighting
 syntax on
-
-" COMMA LEADER
-let mapleader = ","
 
 " Show line numbers
 set number
 highlight LineNr ctermfg=DarkGrey
-" git-gutter colors
-highlight! link SignColumn LineNr
-highlight GitGutterAdd    ctermfg=2
-highlight GitGutterChange ctermfg=3
-highlight GitGutterDelete ctermfg=1
 " vsplit same color as background
 highlight VertSplit cterm=NONE
 
