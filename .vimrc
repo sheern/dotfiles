@@ -143,7 +143,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>= <C-w>=<CR>
 
 " Quickly edit and source .vimrc
-nnoremap <leader>ve :tabnew $MYVIMRC<CR>
+nnoremap <leader>ve :tabnew $DOTFILES/custom/.vimrc<CR>:vsplit $MYVIMRC<CR>
 " This mapping is useful if you edited .vimrc in another vim instance
 " But the autocmd will handle the usual case of editing .vimrc in the same instance using <leader>ve
 nnoremap <leader>vr :source $MYVIMRC<CR>
