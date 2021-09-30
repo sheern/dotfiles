@@ -27,7 +27,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 " For plugins to load correctly
@@ -42,8 +41,6 @@ map <C-e> :NERDTreeToggle<CR>
 
 " Tab pages
 nnoremap <C-t> :tabnew<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
 
 " Open fugitive split
 nnoremap <leader>g :Git<CR>
@@ -159,6 +156,7 @@ let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
+highlight SignColumn ctermbg=NONE
 
 " Display all highlight colorings in a split
 nnoremap <leader>h :so $VIMRUNTIME/syntax/hitest.vim<CR>
