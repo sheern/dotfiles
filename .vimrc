@@ -43,7 +43,10 @@ map <C-e> :NERDTreeToggle<CR>
 nnoremap <C-t> :tabnew<CR>
 
 " Open fugitive split
-nnoremap <leader>g :Git<CR>
+nnoremap <leader>gs :Git<CR>
+" Quickfix list of matches (fill in PATTERN and PATHS)
+nnoremap <leader>gg :Ggrep<Space>
+nnoremap <leader>gp :G push<CR>
 
 " Turn on syntax highlighting
 syntax on
