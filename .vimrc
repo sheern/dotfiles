@@ -200,3 +200,6 @@ nnoremap <C-p> :call CocAction('diagnosticPrevious')<CR>
 " =======================================================================
 " =======================================================================
 " =======================================================================
+
+" Define any local/machine-specific configuration here
+source $DOTFILES/custom/.vimrc
