@@ -27,6 +27,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-unimpaired'
 
 call vundle#end()
 " For plugins to load correctly
