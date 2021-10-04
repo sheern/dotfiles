@@ -153,16 +153,8 @@ nnoremap <leader>ve :tabnew $DOTFILES/custom/.vimrc<CR>:vsplit $MYVIMRC<CR>
 nnoremap <leader>vr :source $MYVIMRC<CR>
 autocmd BufWritePost .vimrc normal ,vr
 
-" COLORS
+" COLORSCHEME
 let g:lightline = { 'colorscheme': 'darcula' }
-" Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
 highlight SignColumn ctermbg=NONE
 
 " Display all highlight colorings in a split
