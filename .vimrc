@@ -143,6 +143,8 @@ nnoremap <leader>b :Buffers<CR>
 " SPLITS
 " Resize equally within each split
 nnoremap <leader>= <C-w>=<CR>
+set splitbelow
+set splitright
 
 " Quickly edit and source .vimrc
 nnoremap <leader>ve :tabnew $DOTFILES/custom/.vimrc<CR>:vsplit $MYVIMRC<CR>
