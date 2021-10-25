@@ -7,7 +7,7 @@ echo "Updating submodules for zsh plugins"
 git submodule update --init
 
 # Install important packages
-cat $dotfiles/packages_to_install.txt | xargs sudo apt install
+xargs sudo apt install -y <packages_to_install.txt
 
 # Install oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
