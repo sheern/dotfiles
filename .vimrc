@@ -221,6 +221,8 @@ nmap <leader>rn <Plug>(coc-rename)
 " =======================================================================
 " =======================================================================
 " =======================================================================
-
 " Define any local/machine-specific configuration here
-source $DOTFILES/custom/.vimrc
+let custom_vimrc='$DOTFILES/custom/.vimrc'
+if filereadable(expand(custom_vimrc))
+    source $DOTFILES/custom/.vimrc
+endif
