@@ -42,7 +42,8 @@ autocmd BufWritePre * %s/\s\+$//e
 map <C-e> :NERDTreeToggle<CR>
 
 " Tab pages
-nnoremap <C-t> :tabnew<CR>
+nnoremap <leader><C-t> :tabnew<CR>
+nnoremap <leader><C-w> :tabclose<CR>
 
 " Open fugitive split
 nnoremap <leader>gs :Git<CR>
