@@ -148,7 +148,7 @@ set splitbelow
 set splitright
 
 " Quickly edit and source .vimrc
-nnoremap <leader>ve :tabnew $DOTFILES/custom/.vimrc<CR>:vsplit $MYVIMRC<CR>
+nnoremap <leader>ve :tabnew $DOTFILES/custom/.vimrc<CR>:vsplit $DOTFILES/.vimrc<CR>
 " This mapping is useful if you edited .vimrc in another vim instance
 " But the autocmd will handle the usual case of editing .vimrc in the same instance using <leader>ve
 nnoremap <leader>vr :source $MYVIMRC<CR>
