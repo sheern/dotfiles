@@ -24,7 +24,7 @@ else
     echo "Vundle already exists, skipping clone"
 fi
 
-configs=('.zshrc' '.vimrc' '.tmux.conf')
+configs=('.zshrc' '.vimrc' '.tmux.conf' '.alacritty.yml')
 # Create/update symlinks
 for config in ${configs[@]}; do
     echo "Linking $config"
