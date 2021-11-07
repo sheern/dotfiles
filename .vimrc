@@ -164,6 +164,7 @@ autocmd BufWritePost .vimrc normal ,vr
 " COLORSCHEME
 let g:lightline = { 'colorscheme': 'darcula' }
 highlight SignColumn ctermbg=NONE
+highlight Visual ctermbg=237
 
 " Display all highlight colorings in a split
 nnoremap <leader>h :so $VIMRUNTIME/syntax/hitest.vim<CR>
